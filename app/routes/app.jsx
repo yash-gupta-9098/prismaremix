@@ -29,7 +29,7 @@ export default function App() {
         <Link to="/app/inventory">inventory</Link>
         <Link to="/app/discount">Create Discount</Link>
       </NavMenu>
-      <Outlet />
+      <Outlet /> 
     </AppProvider>
   );
 }
