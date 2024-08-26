@@ -1,6 +1,6 @@
 import { TitleBar } from "@shopify/app-bridge-react";
-import { Avatar, LegacyCard, Page, ResourceItem, ResourceList, Text } from "@shopify/polaris"; // Ensure Polaris components are imported
-import { useLoaderData } from "@remix-run/react"; // Import useLoaderData
+import { Avatar, LegacyCard, Page, ResourceItem, ResourceList, Text } from "@shopify/polaris"; 
+import { useLoaderData } from "@remix-run/react"; 
 
 import { authenticate, apiVersion } from "../shopify.server";
 
@@ -51,11 +51,11 @@ export const loader = async ({ request }) => {
       };
     }
 
-    return { collections: [] }; // Return an empty array if the response is not ok
+    return { collections: [] }; 
 
   } catch (error) {
     console.error("Error fetching collections:", error);
-    throw error; // You might want to return an error-friendly object instead of throwing an error directly
+    throw error;
   }
 }
 
@@ -82,7 +82,7 @@ export default function Reports() {
             name: node.title,
             updatedAt: node.updatedAt,
             sortOrder: node.sortOrder,
-            image: node.image?.url || '', // Image source if available
+            image: node.image?.url || '', 
             altText: node.image?.altText || 'Collection image',
           }))}
           renderItem={(item) => {

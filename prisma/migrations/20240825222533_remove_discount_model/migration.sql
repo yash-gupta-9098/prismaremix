@@ -17,12 +17,4 @@ CREATE TABLE "Session" (
     "emailVerified" BOOLEAN DEFAULT false
 );
 
--- CreateTable
-CREATE TABLE "Discount" (
-    "id" TEXT NOT NULL PRIMARY KEY,
-    "title" TEXT NOT NULL,
-    "startsAt" TEXT NOT NULL,
-    "endsAt" TEXT NOT NULL,
-    "minimumRequirementSubtotal" TEXT NOT NULL,
-    "discountAmount" TEXT NOT NULL
-);
+
