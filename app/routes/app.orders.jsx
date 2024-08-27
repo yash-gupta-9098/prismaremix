@@ -12,12 +12,7 @@ export const query = ` query MyQuery($first: Int, $afterCursor: String, $last: I
         phone
         tags
         currentSubtotalLineItemsQuantity
-        id
-        customer {
-          email
-          displayName
-          id
-        }
+        id        
         originalTotalPriceSet {
           presentmentMoney {
             amount
@@ -136,7 +131,7 @@ export const query = ` query MyQuery($first: Int, $afterCursor: String, $last: I
               </Text>
             </IndexTable.Cell>
             <IndexTable.Cell>{new Date(node.createdAt).toLocaleString("en-US", dateoptions)}</IndexTable.Cell>
-            <IndexTable.Cell>{node.customer.displayName.toLowerCase().replace(/\b\w/g, char => char.toUpperCase())}</IndexTable.Cell>
+            {/* <IndexTable.Cell>{node.customer.displayName.toLowerCase().replace(/\b\w/g, char => char.toUpperCase())}</IndexTable.Cell> */}
             <IndexTable.Cell><FulfillmentBadge status={node.displayFulfillmentStatus} /></IndexTable.Cell>
             <IndexTable.Cell>{node.displayFinancialStatus.toLowerCase().replace(/\b\w/g, char => char.toUpperCase())}</IndexTable.Cell>
             <IndexTable.Cell>{new Intl.NumberFormat('en-US', {
@@ -163,7 +158,6 @@ export const query = ` query MyQuery($first: Int, $afterCursor: String, $last: I
               headings={[
                 { title: 'Order' },
                 { title: 'Date' },
-                { title: 'Customer' },
                 { title: 'FulfillmentStatus' },
                 { title: 'PaymentStatus' },
                 { title: 'Total' },
