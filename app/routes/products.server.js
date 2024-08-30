@@ -5,7 +5,7 @@ export const loader = async ({request}) =>{
 
     const { shop, accessToken } = await authenticate.admin(request);
 
-    const response = await fetch(`https://${shop}/admin/api/2024-07/products.json` , {
+    const response = await fetch(`https://${shop}/admin/api/2024-04/products.json` , {
         method: "GET",
         headers:{
             "X-Shopify-Access-Token" : accessToken,
