@@ -1,4 +1,4 @@
-import { loader } from "../routes/app.products";
+
 import { authenticate } from "../shopify.server";
 
 export const loader = async ({request}) =>{
