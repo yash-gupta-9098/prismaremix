@@ -22,11 +22,11 @@ const shopify = shopifyApp({
   webhooks: {
     APP_UNINSTALLED: {
       deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "/webhooks",
+      callbackUrl: "https://webhook.site/4b0cfb39-c8d6-4cdf-b66a-63fa4cba9a71",
     },
     PRODUCTS_UPDATE: {
       deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "/webhooks",
+      callbackUrl: "https://webhook.site/4b0cfb39-c8d6-4cdf-b66a-63fa4cba9a71",
       callback: async (topic, shop, body, webhookId) => {
         console.log("---- product update-----")
         const payload = JSON.parse(body)
