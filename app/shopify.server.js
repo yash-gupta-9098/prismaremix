@@ -19,6 +19,29 @@ const shopify = shopifyApp({
   sessionStorage: new PrismaSessionStorage(prisma),
   distribution: AppDistribution.AppStore,
   restResources,
+  // webhooks: {
+  //   APP_UNINSTALLED: {
+  //     deliveryMethod: DeliveryMethod.Http,
+  //     callbackUrl: "https://webhook.site/4b0cfb39-c8d6-4cdf-b66a-63fa4cba9a71",
+  //   },
+  //   PRODUCTS_UPDATE: {
+  //     deliveryMethod: DeliveryMethod.Http,
+  //     callbackUrl: "https://webhook.site/4b0cfb39-c8d6-4cdf-b66a-63fa4cba9a71",
+  //     callback: async (topic, shop, body, webhookId) => {
+  //       console.log("---- product update-----")
+  //       const payload = JSON.parse(body)
+  //       console.log(payload)
+  //       console.log("---- product update-----")
+
+  //     }
+  //   },
+
+  // },
+  // hooks: {
+  //   afterAuth: async ({ session }) => {
+  //     shopify.registerWebhooks({ session });
+  //   },
+  // },
   future: {
     unstable_newEmbeddedAuthStrategy: true,
   },

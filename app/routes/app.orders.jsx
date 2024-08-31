@@ -10,7 +10,7 @@ export const query = ` query MyQuery($first: Int, $afterCursor: String, $last: I
         createdAt
         name
         phone
-        tags
+        tags 
         currentSubtotalLineItemsQuantity
         id        
         originalTotalPriceSet {

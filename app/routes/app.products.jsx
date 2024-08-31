@@ -60,7 +60,7 @@ import {
   export const loader = async ({ request }) => { 
     const { session } = await authenticate.admin(request);
     const { shop, accessToken } = session;
-  
+  console.log(accessToken ,  "accessToken");
     const url = new URL(request.url);
     const afterCursor = url.searchParams.get("afterCursor") || null;
     const beforeCursor = url.searchParams.get("beforeCursor") || null;
