@@ -1,7 +1,7 @@
 import { json } from "@remix-run/node";
 import { GraphqlClient } from '@shopify/shopify-api';
 
-export const loader = async ({ request }) => {
+export const action = async ({ request }) => {
   console.log(request , "resuest")
   try {
     const fetchAllProducts = async () => {
