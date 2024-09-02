@@ -3,11 +3,7 @@
 client_id = "3c2bb7d1805f7470b27bd45dc56e161f"
 name = "remix-app-new"
 handle = "remix-app-new-2"
-<<<<<<< HEAD
-application_url = "https://lamps-mpegs-published-regional.trycloudflare.com"
-=======
-application_url = "https://cake-boxes-inter-leo.trycloudflare.com"
->>>>>>> refs/remotes/origin/main
+application_url = "https://muze-brisbane-slovak-stated.trycloudflare.com"
 embedded = true
 
 [build]
@@ -21,15 +17,9 @@ scopes = "read_customers,read_inventory,read_locations,read_orders,read_products
 
 [auth]
 redirect_urls = [
-<<<<<<< HEAD
-  "https://lamps-mpegs-published-regional.trycloudflare.com/auth/callback",
-  "https://lamps-mpegs-published-regional.trycloudflare.com/auth/shopify/callback",
-  "https://lamps-mpegs-published-regional.trycloudflare.com/api/auth/callback"
-=======
-  "https://cake-boxes-inter-leo.trycloudflare.com/auth/callback",
-  "https://cake-boxes-inter-leo.trycloudflare.com/auth/shopify/callback",
-  "https://cake-boxes-inter-leo.trycloudflare.com/api/auth/callback"
->>>>>>> refs/remotes/origin/main
+  "https://muze-brisbane-slovak-stated.trycloudflare.com/auth/callback",
+  "https://muze-brisbane-slovak-stated.trycloudflare.com/auth/shopify/callback",
+  "https://muze-brisbane-slovak-stated.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

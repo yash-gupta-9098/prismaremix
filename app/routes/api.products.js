@@ -1,74 +1,74 @@
+import { json } from "@remix-run/node";
+import { GraphqlClient } from '@shopify/shopify-api';
 
-import { json} from '@remix-run/node'; 
-import { runBulkOperation } from './utills/BulkOprations/products';
-import fetch from 'node-fetch';
+export const loader = async ({ request }) => {
+  console.log(request , "resuest")
+  try {
+    const fetchAllProducts = async () => {
+      const queryString = `mutation {
+         bulkOperationRunQuery(
+          query: """
+           {
+             products {
+               edges {
+                 node {
+                   id
+                   title
+                   variants {
+                     edges {
+                       node {
+                         title
+                         inventoryQuantity
+                         id
+                         sku
+                         inventoryItem {
+                           id
+                         }
+                         metafields {
+                           edges {
+                             node {
+                               namespace
+                               key
+                               value
+                             }
+                           }
+                         }
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+           """
+         ) {
+           bulkOperation {
+             id
+             status
+           }
+           userErrors {
+             field
+             message
+           }
+         }
+       }`;
+       console.log(queryString , "queryString")
+       const client = new GraphqlClient({
+        domain:  "new-remix-app.myshopify.com", 
+        accessToken:"shpua_be02274416e0693ad9ca6d311486487a"
+    });
+    console.log(client , "client")
+      const res = await client.query({
+        data: queryString,
+      });
+      console.log(res , "res")
+      return res.body;
+    };
 
-
-
-export const loader= async ({request}) => {   
-  console.log("starting....") 
-        // const { shop, accessToken } = await authenticate.admin(request);
-        // console.log(shop, accessToken ,  "loader run");
-    const url = new URL(request.url)
-const shop = url.searchParams.get('shop');
-const accessToken = request.headers.get("X-Shopify-Access-Token");
-console.log(shop , accessToken );
-    // try {
-    //   const data = await runBulkOperation(shop , accessToken );
-    //   console.log(data ,  "api retun ")
-    //   return json(data);
-    // } catch (error) {
-    //   return json({ error: error.message }, { status: 500 });
-    // }
-
-//     const query = `
-//     mutation {
-//       bulkOperationRunQuery(
-//         query: """
-//           {
-//             products {
-//               edges {
-//                 node {
-//                   id
-//                   title
-//                 }
-//               }
-//             }
-//           }
-//         """
-//       ) {
-//         bulkOperation {
-//           id
-//           status
-//         }
-//         userErrors {
-//           field
-//           message
-//         }
-//       }
-//     }
-//   `;
-
-//   try {
-//     const response = await fetch(`https://${shop}/admin/api/2024-07/graphql.json`, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         'X-Shopify-Access-Token': accessToken,
-//       },
-//       body: JSON.stringify({ query }),
-//     });
-// console.log(response , "response");
-//     if (!response.ok) {
-//       const errorData = await response.json();
-//       throw new Error(`Shopify API error: ${response.statusText} - ${JSON.stringify(errorData)}`);
-//     }
-
-//     const data = await response.json();
-//     return data;
-//   } catch (error) {
-//     console.error('Error during Shopify API request:', error);
-//     throw error;
-//   }
-
-  };
+    const data = await fetchAllProducts();
+    console.log(data , "data")
+    return json({ data });
+  } catch (error) {
+    return json({ error: error.message }, { status: 500 });
+  }
+};
