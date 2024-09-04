@@ -3,7 +3,7 @@
 client_id = "3c2bb7d1805f7470b27bd45dc56e161f"
 name = "remix-app-new"
 handle = "remix-app-new-2"
-application_url = "https://rural-solutions-connections-ns.trycloudflare.com"
+application_url = "https://experts-boc-bias-budget.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_customers,read_inventory,read_locations,read_orders,read_products
 
 [auth]
 redirect_urls = [
-  "https://rural-solutions-connections-ns.trycloudflare.com/auth/callback",
-  "https://rural-solutions-connections-ns.trycloudflare.com/auth/shopify/callback",
-  "https://rural-solutions-connections-ns.trycloudflare.com/api/auth/callback"
+  "https://experts-boc-bias-budget.trycloudflare.com/auth/callback",
+  "https://experts-boc-bias-budget.trycloudflare.com/auth/shopify/callback",
+  "https://experts-boc-bias-budget.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

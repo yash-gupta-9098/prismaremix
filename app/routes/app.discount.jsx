@@ -3,7 +3,7 @@ import { authenticate } from "../shopify.server";
 import { Form, useActionData, useSubmit } from "@remix-run/react";
 import { BlockStack, Button, Card, Page, TextField } from "@shopify/polaris";
 import { useState } from "react";
-import { createDiscount } from "../api/prisma.server";
+import { createDiscount } from "../prismaserver/prisma.server";
 
 
 export const action = async ({ request }) => {
