@@ -37,7 +37,22 @@ const shopify = shopifyApp({
 
       }
     },
-
+    PRODUCTS_CREATE: {
+      deliveryMethod: DeliveryMethod.Http,
+      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee"
+    },
+    PRODUCTS_DELETE: {
+      deliveryMethod: DeliveryMethod.Http,
+      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee"
+    },
+    ORDERS_CREATE: {
+      deliveryMethod: DeliveryMethod.Http,
+      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee"
+    },
+    ORDERS_EDITED: {
+      deliveryMethod: DeliveryMethod.Http,
+      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee"
+    }
   },
   hooks: {
     afterAuth: async ({ session }) => {
