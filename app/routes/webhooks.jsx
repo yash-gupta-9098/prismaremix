@@ -22,9 +22,9 @@ export const action = async ({ request }) => {
     // case "PRODUCTS_UPDATE":
     //   console.log("PRODUCTS_CREATE")
     //   break;
-    // case "PRODUCTS_UPDATE":
-    //     console.log("PRODUCTS_UPDATE: ", payload);
-    //   break;
+    case "PRODUCTS_UPDATE":
+        console.log("PRODUCTS_UPDATE: ", payload);
+      break;
     case "CUSTOMERS_DATA_REQUEST":
     case "CUSTOMERS_REDACT":
     case "SHOP_REDACT":

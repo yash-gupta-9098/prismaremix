@@ -3,7 +3,7 @@
 client_id = "3c2bb7d1805f7470b27bd45dc56e161f"
 name = "remix-app-new"
 handle = "remix-app-new-2"
-application_url = "https://hundred-roulette-absolute-course.trycloudflare.com"
+application_url = "https://love-concerned-capabilities-lenses.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_customers,read_inventory,read_locations,read_orders,read_products
 
 [auth]
 redirect_urls = [
-  "https://hundred-roulette-absolute-course.trycloudflare.com/auth/callback",
-  "https://hundred-roulette-absolute-course.trycloudflare.com/auth/shopify/callback",
-  "https://hundred-roulette-absolute-course.trycloudflare.com/api/auth/callback"
+  "https://love-concerned-capabilities-lenses.trycloudflare.com/auth/callback",
+  "https://love-concerned-capabilities-lenses.trycloudflare.com/auth/shopify/callback",
+  "https://love-concerned-capabilities-lenses.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
