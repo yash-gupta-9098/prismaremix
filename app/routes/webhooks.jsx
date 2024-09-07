@@ -35,6 +35,16 @@ export const action = async ({ request }) => {
         console.log("ORDER_EDITED: ", payload);
         return new Response("ORDER_EDITED handled", { status: 200 });
       break;
+    case "ORDERS_UPDATED":
+        console.log("ORDERS_UPDATED: ", payload);
+        return new Response("ORDERS_UPDATED handled", { status: 200 });
+      break;
+    case "ORDERS_DELETE":
+        console.log("ORDERS_DELETE: ", payload);
+        return new Response("ORDERS_DELETE handled", { status: 200 });
+      break;
+
+    
     case "CUSTOMERS_DATA_REQUEST":
     case "CUSTOMERS_REDACT":
     case "SHOP_REDACT":
