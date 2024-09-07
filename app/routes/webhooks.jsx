@@ -19,11 +19,21 @@ export const action = async ({ request }) => {
         await db.session.deleteMany({ where: { shop } });
       }
       break;
-    // case "PRODUCTS_UPDATE":
-    //   console.log("PRODUCTS_CREATE")
-    //   break;
-    case "PRODUCTS_UPDATE":
-        console.log("PRODUCTS_UPDATE: ", payload);
+    case "PRODUCTS_CREATE":
+      console.log("PRODUCTS_CREATE" , payload)
+      return new Response("PRODUCTS_CREATE handled", { status: 200 });
+      break;
+    case "PRODUCTS_DELETE":
+      console.log("PRODUCTS_CREATE" , payload)
+      return new Response("PRODUCTS_DELETE handled", { status: 200 });
+      break;
+      case "ORDER_CREATE":
+      console.log("ORDER_CREATE" , payload )
+      return new Response("ORDER_CREATE handled", { status: 200 });
+      break;
+    case "ORDER_EDITED":
+        console.log("ORDER_EDITED: ", payload);
+        return new Response("ORDER_EDITED handled", { status: 200 });
       break;
     case "CUSTOMERS_DATA_REQUEST":
     case "CUSTOMERS_REDACT":
@@ -31,6 +41,6 @@ export const action = async ({ request }) => {
     default:
       throw new Response("Unhandled webhook topic", { status: 404 });
   }
-
-  throw new Response();
+  return new Response("Internal Server Error", { status: 500 });
+  // throw new Response();
 };

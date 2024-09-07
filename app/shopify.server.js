@@ -24,11 +24,11 @@ const shopify = shopifyApp({
   webhooks: {
     APP_UNINSTALLED: {
       deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee",
+      callbackUrl: "/webhooks",
     },
     PRODUCTS_UPDATE: {
       deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee",
+      callbackUrl: "/webhooks",
       callback: async (topic, shop, body, webhookId) => {
         console.log("---- product update-----")
         const payload = JSON.parse(body)
@@ -39,25 +39,55 @@ const shopify = shopifyApp({
     },
     PRODUCTS_CREATE: {
       deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee"
+      callbackUrl: "/webhooks",
+      callback: async (topic, shop, body, webhookId) => {
+        console.log("---- product update-----")
+        const payload = JSON.parse(body)
+        console.log(payload)
+        console.log("---- product update-----")
+
+      }
     },
     PRODUCTS_DELETE: {
       deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee"
+      callbackUrl: "/webhooks",
+      callback: async (topic, shop, body, webhookId) => {
+        console.log("---- product update-----")
+        const payload = JSON.parse(body)
+        console.log(payload)
+        console.log("---- product update-----")
+
+      }
     },
     ORDERS_CREATE: {
       deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee"
+      callbackUrl: "/webhooks",
+      callback: async (topic, shop, body, webhookId) => {
+        console.log("---- product update-----")
+        const payload = JSON.parse(body)
+        console.log(payload)
+        console.log("---- product update-----")
+
+      }
     },
     ORDERS_EDITED: {
       deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee"
+      callbackUrl: "/webhooks",
+      callback: async (topic, shop, body, webhookId) => {
+        console.log("---- product update-----")
+        const payload = JSON.parse(body)
+        console.log(payload)
+        console.log("---- product update-----")
+
+      }
     }
   },
   hooks: {
     afterAuth: async ({ session }) => {
-      shopify.registerWebhooks({ session });
-    },
+      console.log("Registering webhooks...");
+      await shopify.registerWebhooks({ session });
+      console.log("Webhooks registered!");
+    }
   },
   future: {
     unstable_newEmbeddedAuthStrategy: true,
