@@ -102,6 +102,28 @@ const shopify = shopifyApp({
        console.log("---- product update-----")
 
      }
+   },
+    CUSTOMERS_UPDATE: {
+     deliveryMethod: DeliveryMethod.Http,
+     callbackUrl: "https://webhook.site/b12ecd21-40d2-4549-9152-47eb2c93e3d3",
+     callback: async (topic, shop, body, webhookId) => {
+       console.log("---- CUSTOMERS_UPDATE-----")
+       const payload = JSON.parse(body)
+       console.log(payload)
+       console.log("---- CUSTOMERS_UPDATE-----")
+
+     }
+   },
+    CUSTOMERS_DELETE: {
+     deliveryMethod: DeliveryMethod.Http,
+     callbackUrl: "https://webhook.site/b12ecd21-40d2-4549-9152-47eb2c93e3d3",
+     callback: async (topic, shop, body, webhookId) => {
+       console.log("----CUSTOMERS_DELETE-----")
+       const payload = JSON.parse(body)
+       console.log(payload)
+       console.log("---- CUSTOMERS_DELETE-----")
+
+     }
    }
   },
   hooks: {
