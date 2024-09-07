@@ -24,11 +24,11 @@ const shopify = shopifyApp({
   webhooks: {
     APP_UNINSTALLED: {
       deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee",
+      callbackUrl: "/webhooks",
     },
     PRODUCTS_UPDATE: {
       deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee",
+      callbackUrl: "/webhooks",
       callback: async (topic, shop, body, webhookId) => {
         console.log("---- product update-----")
         const payload = JSON.parse(body)
@@ -39,7 +39,7 @@ const shopify = shopifyApp({
     },
     PRODUCTS_CREATE: {
       deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee",
+      callbackUrl: "/webhooks",
       callback: async (topic, shop, body, webhookId) => {
         console.log("---- product update-----")
         const payload = JSON.parse(body)
@@ -50,7 +50,7 @@ const shopify = shopifyApp({
     },
     PRODUCTS_DELETE: {
       deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee",
+      callbackUrl: "/webhooks",
       callback: async (topic, shop, body, webhookId) => {
         console.log("---- product update-----")
         const payload = JSON.parse(body)
@@ -61,7 +61,7 @@ const shopify = shopifyApp({
     },
     ORDERS_CREATE: {
       deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee",
+      callbackUrl: "/webhooks",
       callback: async (topic, shop, body, webhookId) => {
         console.log("---- product update-----")
         const payload = JSON.parse(body)
@@ -72,7 +72,18 @@ const shopify = shopifyApp({
     },
     ORDERS_DELETE: {
       deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee",
+      callbackUrl: "/webhooks",
+      callback: async (topic, shop, body, webhookId) => {
+        console.log("---- ORDERS_DELETE-----")
+        const payload = JSON.parse(body)
+        console.log(payload)
+        console.log("---- ORDERS_DELETE-----")
+
+      }
+    },
+     ORDERS_EDITED: {
+      deliveryMethod: DeliveryMethod.Http,
+      callbackUrl: "/webhooks",
       callback: async (topic, shop, body, webhookId) => {
         console.log("---- product update-----")
         const payload = JSON.parse(body)
@@ -81,17 +92,17 @@ const shopify = shopifyApp({
 
       }
     },
-     ORDERS_DELETE: {
-      deliveryMethod: DeliveryMethod.Http,
-      callbackUrl: "https://webhook.site/6e3a944c-880a-4187-a8d0-4f013bd5bbee",
-      callback: async (topic, shop, body, webhookId) => {
-        console.log("---- product update-----")
-        const payload = JSON.parse(body)
-        console.log(payload)
-        console.log("---- product update-----")
+    ORDERS_UPDATED: {
+     deliveryMethod: DeliveryMethod.Http,
+     callbackUrl: "/webhooks",
+     callback: async (topic, shop, body, webhookId) => {
+       console.log("---- product update-----")
+       const payload = JSON.parse(body)
+       console.log(payload)
+       console.log("---- product update-----")
 
-      }
-    }
+     }
+   }
   },
   hooks: {
     afterAuth: async ({ session }) => {
