@@ -146,6 +146,28 @@ const shopify = shopifyApp({
        console.log("---- MARKETS_CREATE-----") 
 
      }
+   },
+   MARKETS_DELETE: {
+     deliveryMethod: DeliveryMethod.Http,
+     callbackUrl: "https://webhook.site/b12ecd21-40d2-4549-9152-47eb2c93e3d3",
+     callback: async (topic, shop, body, webhookId) => {
+       console.log("----MARKETS_CREATE-----")
+       const payload = JSON.parse(body)
+       console.log(payload)
+       console.log("---- MARKETS_CREATE-----") 
+
+     }
+   },
+   MARKETS_UPDATE: {
+     deliveryMethod: DeliveryMethod.Http,
+     callbackUrl: "https://webhook.site/b12ecd21-40d2-4549-9152-47eb2c93e3d3",
+     callback: async (topic, shop, body, webhookId) => {
+       console.log("----MARKETS_CREATE-----")
+       const payload = JSON.parse(body)
+       console.log(payload)
+       console.log("---- MARKETS_CREATE-----") 
+
+     }
    }
   },
   hooks: {
