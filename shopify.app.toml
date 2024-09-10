@@ -3,7 +3,7 @@
 client_id = "3c2bb7d1805f7470b27bd45dc56e161f"
 name = "remix-app-new"
 handle = "remix-app-new-2"
-application_url = "https://season-memo-fu-roller.trycloudflare.com"
+application_url = "https://prismaremix.onrender.com"
 embedded = true
 
 [build]
@@ -13,13 +13,13 @@ include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "read_customers,read_inventory,read_locations,read_orders,read_products,write_customers,write_discounts,write_inventory,write_orders,write_products"
+scopes = "read_markets,read_customers,read_inventory,read_locations,read_orders,read_products,write_customers,write_discounts,write_inventory,write_orders,write_products"
 
 [auth]
 redirect_urls = [
-  "https://season-memo-fu-roller.trycloudflare.com/auth/callback",
-  "https://season-memo-fu-roller.trycloudflare.com/auth/shopify/callback",
-  "https://season-memo-fu-roller.trycloudflare.com/api/auth/callback"
+  "https://prismaremix.onrender.com/auth/callback",
+  "https://prismaremix.onrender.com/auth/shopify/callback",
+  "https://prismaremix.onrender.com/api/auth/callback"
 ]
 
 [webhooks]
