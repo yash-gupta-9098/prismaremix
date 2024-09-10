@@ -151,10 +151,10 @@ const shopify = shopifyApp({
      deliveryMethod: DeliveryMethod.Http,
      callbackUrl: "https://webhook.site/b12ecd21-40d2-4549-9152-47eb2c93e3d3",
      callback: async (topic, shop, body, webhookId) => {
-       console.log("----MARKETS_CREATE-----")
+       console.log("----MARKETS_DELETE-----")
        const payload = JSON.parse(body)
        console.log(payload)
-       console.log("---- MARKETS_CREATE-----") 
+       console.log("---- MARKETS_DELETE-----") 
 
      }
    },
@@ -162,10 +162,10 @@ const shopify = shopifyApp({
      deliveryMethod: DeliveryMethod.Http,
      callbackUrl: "https://webhook.site/b12ecd21-40d2-4549-9152-47eb2c93e3d3",
      callback: async (topic, shop, body, webhookId) => {
-       console.log("----MARKETS_CREATE-----")
+       console.log("----MARKETS_UPDATE-----")
        const payload = JSON.parse(body)
        console.log(payload)
-       console.log("---- MARKETS_CREATE-----") 
+       console.log("---- MARKETS_UPDATE-----") 
 
      }
    }
