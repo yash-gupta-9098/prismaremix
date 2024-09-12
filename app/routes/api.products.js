@@ -17,6 +17,7 @@ export const loader = async ({ request }) => {
 
   // check the middleWare  createShopifyClient
   const { client } = createShopifyClient(shop, accessToken);
+  console.log(client , "client 11111");
 
   try {
     
