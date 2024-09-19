@@ -1,0 +1,26 @@
+query RunInput {
+  cart {
+  
+  buyerIdentity {
+    email
+  }
+    cost {
+      subtotalAmount {
+        amount
+        currencyCode
+      }
+    }
+    ref: attribute(key:"ref"){
+        value
+        }
+    deliveryGroups {
+      id
+      deliveryOptions {
+        handle
+        title
+        description
+        deliveryMethodType
+      }
+    }
+  }
+}
