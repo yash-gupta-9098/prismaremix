@@ -11,6 +11,11 @@ description = "t:description"
   target = "purchase.delivery-customization.run"
   input_query = "src/run.graphql"
   export = "run"
+  
+  [extensions.capabilities]
+  network_access = true
+  block_progress = true
+  api_access = true
 
   [extensions.build]
   command = ""
