@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "remix vite:build",
-    "dev": "PORT=4100 shopify app dev",
+    "dev": "PORT=4100 shopify app dev --tunnel-url https://honest-rooms-decide.loca.lt",
     "config:link": "shopify app config link",
     "generate": "shopify app generate",
     "deploy": "shopify app deploy",
