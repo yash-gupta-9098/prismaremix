@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "remix vite:build",
-    "dev": "PORT=4100 shopify app dev --tunnel-url https://799b814177d57e320b232350b2f73e2e.serveo.net:80",
+    "dev": "PORT=4100 shopify app dev --tunnel-url https://04a27347596b818f32559b05fed12933.serveo.net:80",
     "config:link": "shopify app config link",
     "generate": "shopify app generate",
     "deploy": "shopify app deploy",
