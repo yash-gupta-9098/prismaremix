@@ -3,7 +3,7 @@
 client_id = "3c2bb7d1805f7470b27bd45dc56e161f"
 name = "remix-app-new"
 handle = "remix-app-new-2"
-application_url = "13.202.223.92"
+application_url = "https://ensuring-dated-customized-workout.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_customers,read_inventory,read_locations,read_markets,read_orders,
 
 [auth]
 redirect_urls = [
-  "13.202.223.92/auth/callback",
-  "13.202.223.92/auth/shopify/callback",
-  "13.202.223.92/api/auth/callback"
+  "https://ensuring-dated-customized-workout.trycloudflare.com/auth/callback",
+  "https://ensuring-dated-customized-workout.trycloudflare.com/auth/shopify/callback",
+  "https://ensuring-dated-customized-workout.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
